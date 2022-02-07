@@ -1,3 +1,9 @@
+// Add tailwind directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Global styles
 html,
 body {
   height: 100%;
