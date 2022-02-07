@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "primordial-soup-site": {
+      "hosting": {
+        "primordial-soup": [
+          "primordial-soup-site"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "primordial-soup-site"
+  }
+}
