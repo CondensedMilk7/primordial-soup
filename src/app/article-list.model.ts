@@ -3,4 +3,5 @@ export interface ArticleListItem {
   title: string;
   date: number;
   description?: string;
+  thumbnail: string;
 }
