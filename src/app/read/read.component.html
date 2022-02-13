@@ -1,1 +1,22 @@
-<app-vertical-navigation></app-vertical-navigation>
+<mat-drawer-container class="h-screen overflow-auto bg-soup-50">
+  <mat-drawer #drawer class="bg-soup-500 w-72" mode="side" opened>
+    <div class="h-4">
+      <mat-progress-bar
+        *ngIf="loading$ | async"
+        mode="indeterminate"
+      ></mat-progress-bar>
+    </div>
+    <app-filter></app-filter>
+    <div class="p-4"></div>
+    <ng-container *ngIf="articles$ | async as articles">
+      <app-article-card
+        *ngFor="let article of articles"
+        [article]="article"
+      ></app-article-card>
+    </ng-container>
+    <ng-container *ngIf="loading$ | async"></ng-container>
+  </mat-drawer>
+
+  <div>Some content</div>
+</mat-drawer-container>
+`

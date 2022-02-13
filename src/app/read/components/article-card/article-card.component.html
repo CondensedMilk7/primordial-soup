@@ -1,19 +1,16 @@
 <div
-  class="flex flex-col flex-1 rounded-3xl overflow-hidden bg-can-500 shadow-sm w-72 mb-8"
+  class="flex flex-col flex-1 rounded-3xl overflow-hidden bg-can-500 shadow-sm mb-8 mx-4"
 >
   <div class="card-item h-2/3">
-    <img
-      class="w-full"
-      src="https://i.ytimg.com/vi/4kxZsWLi-04/mqdefault.jpg"
-    />
+    <img class="w-full" [src]="article.thumbnail" />
   </div>
   <div class="card-item p-4 text-sm">
-    <p class="text-soup-900">The Split Subject: Lacanian Psychoanalysis</p>
+    <p class="text-soup-900">{{ article.title }}</p>
     <div class="flex justify-between mt-3">
       <a href="" class="text-xs font-bold text-soup-900">Read more...</a>
       <div class="flex items-center">
         <img src="/assets/icons/calendar.svg" class="w-4 h-4 mr-1" />
-        <span class="text-xs text-soup-900">13/2/2022 </span>
+        <span class="text-xs text-soup-900">{{ article.date | date }}</span>
       </div>
     </div>
   </div>

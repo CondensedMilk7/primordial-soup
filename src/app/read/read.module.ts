@@ -2,22 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReadComponent } from './read.component';
 import { readRoutes } from './read.routing';
-import { VerticalNavigationComponent } from './vertical-navigation/vertical-navigation.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ArticleListComponent } from './article-list/article-list.component';
-import { ArticleCardComponent } from './article-card/article-card.component';
-import { FilterComponent } from './filter/filter.component';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
+import { readReducer } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { ReadEffects } from './store/effects';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
-  declarations: [
-    ReadComponent,
-    VerticalNavigationComponent,
-    ArticleListComponent,
-    ArticleCardComponent,
-    FilterComponent,
-  ],
+  declarations: [ReadComponent, ArticleCardComponent, FilterComponent],
   exports: [ReadComponent],
-  imports: [CommonModule, MatSidenavModule, RouterModule.forChild(readRoutes)],
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    MatProgressBarModule,
+    RouterModule.forChild(readRoutes),
+    StoreModule.forFeature('read', readReducer),
+    EffectsModule.forFeature([ReadEffects]),
+  ],
 })
 export class ReadModule {}
