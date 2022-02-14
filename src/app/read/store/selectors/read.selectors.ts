@@ -22,3 +22,8 @@ export const selectLoading = createSelector(
   selectRead,
   (state: ReadState) => state.loading
 );
+
+export const selectFilteredArticles = createSelector(
+  selectRead,
+  (state: ReadState) => state.filteredList
+);

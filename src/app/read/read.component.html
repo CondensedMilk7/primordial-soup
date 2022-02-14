@@ -6,15 +6,12 @@
         mode="indeterminate"
       ></mat-progress-bar>
     </div>
-    <app-filter></app-filter>
+    <app-filter (search)="onSearch($event)"></app-filter>
     <div class="p-4"></div>
-    <ng-container *ngIf="articles$ | async as articles">
-      <app-article-card
-        *ngFor="let article of articles"
-        [article]="article"
-      ></app-article-card>
-    </ng-container>
-    <ng-container *ngIf="loading$ | async"></ng-container>
+    <app-articles-list
+      [articles]="articles$ | async"
+      [filteredArticles]="filteredArticles$ | async"
+    ></app-articles-list>
   </mat-drawer>
 
   <div>Some content</div>

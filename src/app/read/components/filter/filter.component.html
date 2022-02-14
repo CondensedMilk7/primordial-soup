@@ -9,5 +9,7 @@
     placeholder="Search..."
     (focus)="inputFocus = true"
     (focusout)="inputFocus = false"
+    (input)="onSearch(searchInput.value)"
+    #searchInput
   />
 </div>

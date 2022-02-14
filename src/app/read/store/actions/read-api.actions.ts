@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ArticleListItem } from '../../article-list.model';
+import { ArticleListItem } from '../models/article-list.model';
 
 export const getArticlesListSuccess = createAction(
   '[Read API] Get Articles List Successfully',
