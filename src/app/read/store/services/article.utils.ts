@@ -6,7 +6,7 @@ export class ArticleUtils {
     filter: string
   ): ArticleListItem[] | null {
     if (filter === '') {
-      return null;
+      return state;
     }
     const articles = state;
     const filteredArticles = [];
@@ -16,7 +16,6 @@ export class ArticleUtils {
       )
         filteredArticles.push(article);
     }
-    console.log(filteredArticles);
     return filteredArticles;
   }
 }

@@ -6,4 +6,5 @@ export interface ReadState {
   selectedArticle: string;
   error: string | null;
   loading: boolean;
+  filter: string;
 }

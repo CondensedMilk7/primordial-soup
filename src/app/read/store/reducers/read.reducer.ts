@@ -9,6 +9,7 @@ const initialState: ReadState = {
   selectedArticle: '',
   loading: false,
   error: null,
+  filter: '',
 };
 export const readReducer = createReducer(
   initialState,
@@ -17,6 +18,7 @@ export const readReducer = createReducer(
   on(ReadApiActions.getArticlesListSuccess, (state, { articles }) => ({
     ...state,
     articlesList: articles,
+    filteredList: ArticleUtils.filterArticles(articles, state.filter),
     loading: false,
   })),
   on(ReadApiActions.getArticlesListFailed, (state) => ({

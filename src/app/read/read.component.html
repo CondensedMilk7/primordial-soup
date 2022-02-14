@@ -9,8 +9,7 @@
     <app-filter (search)="onSearch($event)"></app-filter>
     <div class="p-4"></div>
     <app-articles-list
-      [articles]="articles$ | async"
-      [filteredArticles]="filteredArticles$ | async"
+      [articles]="filteredArticles$ | async"
     ></app-articles-list>
   </mat-drawer>
 
