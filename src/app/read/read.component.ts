@@ -9,7 +9,6 @@ import { ReadSelectors } from './store/selectors';
   styleUrls: ['./read.component.scss'],
 })
 export class ReadComponent implements OnInit {
-  articles$ = this.store.select(ReadSelectors.selectArticlesList);
   filteredArticles$ = this.store.select(ReadSelectors.selectFilteredArticles);
   loading$ = this.store.select(ReadSelectors.selectLoading);
 

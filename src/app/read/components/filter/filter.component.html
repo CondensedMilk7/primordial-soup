@@ -9,7 +9,6 @@
     placeholder="Search..."
     (focus)="inputFocus = true"
     (focusout)="inputFocus = false"
-    (input)="onSearch(searchInput.value)"
-    #searchInput
+    [formControl]="searchControl"
   />
 </div>

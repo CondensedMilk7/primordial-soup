@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ArticleListItem } from '../../store/models/article-list.model';
 
 @Component({

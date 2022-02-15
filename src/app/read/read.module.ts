@@ -12,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { ReadEffects } from './store/effects';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ArticlesListComponent } from './components/articles-list/articles-list.
   exports: [ReadComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatProgressBarModule,
     RouterModule.forChild(readRoutes),
