@@ -7,14 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClientModule } from '@angular/common/http';
-import { ReadModule } from './read/read.module';
+import { ReaderModule } from './reader/reader.module';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routing';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
 
     // Custom modules
-    ReadModule,
+    ReaderModule,
 
     RouterModule.forRoot(appRoutes),
 

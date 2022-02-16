@@ -1,9 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
-import { ReadActions, ReadApiActions } from '../actions';
+import { ReaderActions, ReaderApiActions } from '../actions';
 import { ArticleUtils } from '../services/article.utils';
-import { ReadState } from '../states';
+import { ReaderState } from '../states';
 
-const initialState: ReadState = {
+const initialState: ReaderState = {
   articlesList: [],
   filteredList: [],
   selectedArticle: '',
@@ -11,23 +11,23 @@ const initialState: ReadState = {
   error: null,
   filter: '',
 };
-export const readReducer = createReducer(
+export const readerReducer = createReducer(
   initialState,
-  on(ReadActions.getArticlesList, (state) => ({ ...state, loading: true })),
+  on(ReaderActions.getArticlesList, (state) => ({ ...state, loading: true })),
 
-  on(ReadApiActions.getArticlesListSuccess, (state, { articles }) => ({
+  on(ReaderApiActions.getArticlesListSuccess, (state, { articles }) => ({
     ...state,
     articlesList: articles,
     filteredList: ArticleUtils.filterArticles(articles, state.filter),
     loading: false,
   })),
-  on(ReadApiActions.getArticlesListFailed, (state) => ({
+  on(ReaderApiActions.getArticlesListFailed, (state) => ({
     ...state,
     loading: false,
     error: 'Error: Failed to retrieve articles',
   })),
 
-  on(ReadActions.searchArticle, (state, { filter }) => ({
+  on(ReaderActions.searchArticle, (state, { filter }) => ({
     ...state,
     filteredList: ArticleUtils.filterArticles(state.articlesList, filter),
   }))
