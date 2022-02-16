@@ -1,35 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ReadComponent } from './read.component';
-import { readRoutes } from './read.routing';
+import { ReaderComponent } from './reader.component';
+import { readRoutes } from './reader.routing';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { readReducer } from './store/reducers';
+import { readerReducer } from './store/reducers';
 import { EffectsModule } from '@ngrx/effects';
-import { ReadEffects } from './store/effects';
+import { ReaderEffects } from './store/effects';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    ReadComponent,
+    ReaderComponent,
     ArticleCardComponent,
     FilterComponent,
     ArticlesListComponent,
   ],
-  exports: [ReadComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatProgressBarModule,
     RouterModule.forChild(readRoutes),
-    StoreModule.forFeature('read', readReducer),
-    EffectsModule.forFeature([ReadEffects]),
+    StoreModule.forFeature('reader', readerReducer),
+    EffectsModule.forFeature([ReaderEffects]),
   ],
 })
-export class ReadModule {}
+export class ReaderModule {}
