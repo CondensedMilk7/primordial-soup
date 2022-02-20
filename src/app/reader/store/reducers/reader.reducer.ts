@@ -6,7 +6,11 @@ import { ReaderState } from '../states';
 const initialState: ReaderState = {
   articlesList: [],
   filteredList: [],
-  selectedArticle: '',
+  selectedArticle: {
+    key: '',
+    videoUrl: '',
+    date: 0,
+  },
   loading: false,
   error: null,
   filter: '',
@@ -30,5 +34,25 @@ export const readerReducer = createReducer(
   on(ReaderActions.searchArticle, (state, { filter }) => ({
     ...state,
     filteredList: ArticleUtils.filterArticles(state.articlesList, filter),
+  })),
+
+  on(ReaderActions.selectArticle, (state, { key }) => ({
+    ...state,
+    loading: true,
+    selectedArticle: {
+      key: key,
+      videoUrl: '',
+      date: 0,
+    },
+  })),
+
+  on(ReaderApiActions.getArticleDataSuccess, (state, { videoUrl, date }) => ({
+    ...state,
+    loading: false,
+    selectedArticle: {
+      ...state.selectedArticle,
+      videoUrl: videoUrl,
+      date: date,
+    },
   }))
 );

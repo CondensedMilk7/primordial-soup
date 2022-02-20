@@ -12,6 +12,7 @@
       [articles]="filteredArticles$ | async"
     ></app-articles-list>
   </mat-drawer>
-
-  <div>Some content</div>
+  <ng-container *ngIf="currentArticle$ | async as article">
+    <app-article [article]="article"></app-article>
+  </ng-container>
 </mat-drawer-container>
