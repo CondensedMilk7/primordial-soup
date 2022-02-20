@@ -23,11 +23,11 @@ export class ArticleComponent {
         `;
       } else if (level === 2) {
         return `
-        <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
+          <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
         `;
       } else {
         return `
-        <h${level} class="text-lg font-bold" >${text}</h${level}>
+          <h${level} class="text-lg font-bold" >${text}</h${level}>
         `;
       }
     };
