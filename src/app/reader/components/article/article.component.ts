@@ -7,7 +7,9 @@ import { environment } from 'src/environments/environment';
   templateUrl: './article.component.html',
 })
 export class ArticleComponent {
+  // article metadata
   @Input() article = {
+    title: '',
     key: '',
     videoUrl: '',
     date: 0,
@@ -18,9 +20,8 @@ export class ArticleComponent {
   constructor(private markdownService: MarkdownService) {
     this.markdownService.renderer.heading = (text, level) => {
       if (level === 1) {
-        return `
-          <h${level} class="text-2xl font-bold mb-8" >${text}</h${level}>
-        `;
+        // exclude h1 as it is only used for main title, which is displayed from article metadata
+        return '';
       } else if (level === 2) {
         return `
           <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
@@ -34,7 +35,7 @@ export class ArticleComponent {
 
     this.markdownService.renderer.paragraph = (text) => {
       return `
-        <p class="my-4" >${text}</p>
+        <p class="mb-8" >${text}</p>
       `;
     };
   }

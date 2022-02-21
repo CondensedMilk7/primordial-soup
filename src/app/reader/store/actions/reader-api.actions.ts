@@ -21,5 +21,5 @@ export const getArticleTextFailed = createAction(
 
 export const getArticleDataSuccess = createAction(
   '[Reader API] Get Article Data Successfully',
-  props<{ videoUrl: string; date: number }>()
+  props<{ title: string; videoUrl: string; date: number }>()
 );

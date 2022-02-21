@@ -4,6 +4,7 @@ export interface ReaderState {
   articlesList: ArticleListItem[];
   filteredList: ArticleListItem[] | null;
   selectedArticle: {
+    title: string;
     key: string;
     videoUrl: string;
     date: number;

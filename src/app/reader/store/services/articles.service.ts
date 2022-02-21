@@ -21,7 +21,7 @@ export class ArticlesService {
   }
 
   getArticleData(key: string) {
-    return this.http.get<{ videoUrl: string; date: number }>(
+    return this.http.get<{ title: string; videoUrl: string; date: number }>(
       `${this.baseUrl}${key}/data.json`
     );
   }
