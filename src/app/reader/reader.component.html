@@ -13,7 +13,7 @@
     ></app-articles-list>
   </mat-drawer>
   <ng-container *ngIf="currentArticle$ | async as article">
-    <app-video [videoUrl]="article.videoUrl"></app-video>
+    <app-video [videoId]="article.videoId"></app-video>
     <app-article [article]="article"></app-article>
   </ng-container>
 </mat-drawer-container>

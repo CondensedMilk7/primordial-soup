@@ -9,7 +9,7 @@ const initialState: ReaderState = {
   selectedArticle: {
     title: '',
     key: '',
-    videoUrl: '',
+    videoId: '',
     date: 0,
   },
   loading: false,
@@ -43,19 +43,19 @@ export const readerReducer = createReducer(
     selectedArticle: {
       key: key,
       title: '',
-      videoUrl: '',
+      videoId: '',
       date: 0,
     },
   })),
 
   on(
     ReaderApiActions.getArticleDataSuccess,
-    (state, { videoUrl, date, title }) => ({
+    (state, { videoId, date, title }) => ({
       ...state,
       loading: false,
       selectedArticle: {
         ...state.selectedArticle,
-        videoUrl: videoUrl,
+        videoId: videoId,
         date: date,
         title: title,
       },

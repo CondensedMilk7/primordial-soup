@@ -11,7 +11,7 @@ export class ArticleComponent {
   @Input() article = {
     title: '',
     key: '',
-    videoUrl: '',
+    videoId: '',
     date: 0,
   };
 

@@ -6,7 +6,7 @@ export interface ReaderState {
   selectedArticle: {
     title: string;
     key: string;
-    videoUrl: string;
+    videoId: string;
     date: number;
   };
   error: string | null;

@@ -1,8 +1,10 @@
 <div class="p-8 flex flex-col items-center">
-  <div class="w-40 text-center">
-    <p class="font-bold">Date {{ article.date | date: "dd/mm/yyyy" }}</p>
-    <div class="bg-soup-900 h-0.5 mt-2"></div>
-  </div>
+  <ng-container *ngIf="article.date">
+    <div class="w-40 text-center">
+      <p class="font-bold">Date {{ article.date | date: "dd/mm/yyyy" }}</p>
+      <div class="bg-soup-900 h-0.5 mt-2"></div></div
+  ></ng-container>
+
   <h1 class="text-center text-4xl font-bold my-10">{{ article.title }}</h1>
   <div class="lg:columns-2 gap-16 text-justify max-w-5xl">
     <markdown [src]="baseUrl + article.key + '/text.md'"></markdown>
