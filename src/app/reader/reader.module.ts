@@ -15,6 +15,7 @@ import { ArticlesListComponent } from './components/articles-list/articles-list.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArticleComponent } from './components/article/article.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MarkdownModule } from 'ngx-markdown';
     FilterComponent,
     ArticlesListComponent,
     ArticleComponent,
+    VideoComponent,
   ],
   imports: [
     CommonModule,
