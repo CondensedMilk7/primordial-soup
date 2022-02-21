@@ -18,6 +18,7 @@ export class ArticleComponent {
   baseUrl = environment.githubUrl;
 
   constructor(private markdownService: MarkdownService) {
+    // Heading configuration
     this.markdownService.renderer.heading = (text, level) => {
       if (level === 1) {
         // exclude h1 as it is only used for main title, which is displayed from article metadata
@@ -33,9 +34,18 @@ export class ArticleComponent {
       }
     };
 
+    // Paragraph configuration
     this.markdownService.renderer.paragraph = (text) => {
       return `
         <p class="mb-8" >${text}</p>
+      `;
+    };
+
+    // List configuration
+    this.markdownService.renderer.list = (body, ordered) => {
+      const listStyle = ordered ? 'list-decimal' : 'list-disc';
+      return `
+        <ul class="${listStyle} list-inside mb-8 leading-relaxed" >${body}</ul>
       `;
     };
   }
