@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
@@ -9,6 +14,8 @@ import { ReaderSelectors } from './store/selectors';
 @Component({
   selector: 'app-reader',
   templateUrl: './reader.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ReaderComponent implements OnInit {
   filteredArticles$ = this.store.select(ReaderSelectors.selectFilteredArticles);

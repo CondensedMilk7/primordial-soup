@@ -1,10 +1,17 @@
-import { Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MarkdownService } from 'ngx-markdown';
 import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ArticleComponent {
   // article metadata
