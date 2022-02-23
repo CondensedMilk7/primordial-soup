@@ -18,24 +18,17 @@ import { ReaderSelectors } from './store/selectors';
   encapsulation: ViewEncapsulation.None,
 })
 export class ReaderComponent implements OnInit {
-  filteredArticles$ = this.store.select(ReaderSelectors.selectFilteredArticles);
   loading$ = this.store.select(ReaderSelectors.selectLoading);
   currentArticle$ = this.store.select(ReaderSelectors.selectCurrentArticle);
 
   constructor(private store: Store, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.store.dispatch(ReaderActions.getArticlesList());
-
     this.route.params.pipe(untilDestroyed(this)).subscribe((params) => {
       const key = params['article'];
       if (key) {
         this.store.dispatch(ReaderActions.selectArticle({ key: key }));
       }
     });
-  }
-
-  onSearch(filterVal: string) {
-    this.store.dispatch(ReaderActions.searchArticle({ filter: filterVal }));
   }
 }

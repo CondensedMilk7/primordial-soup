@@ -1,19 +1,4 @@
-<mat-drawer-container class="h-full overflow-auto bg-soup-50">
-  <mat-drawer #drawer class="bg-soup-500 w-72" mode="side" opened>
-    <div class="h-4">
-      <mat-progress-bar
-        *ngIf="loading$ | async"
-        mode="indeterminate"
-      ></mat-progress-bar>
-    </div>
-    <app-filter (search)="onSearch($event)"></app-filter>
-    <div class="p-4"></div>
-    <app-articles-list
-      [articles]="filteredArticles$ | async"
-    ></app-articles-list>
-  </mat-drawer>
-  <ng-container *ngIf="currentArticle$ | async as article">
-    <app-video [videoId]="article.videoId"></app-video>
-    <app-article [article]="article"></app-article>
-  </ng-container>
-</mat-drawer-container>
+<ng-container *ngIf="currentArticle$ | async as article">
+  <app-video [videoId]="article.videoId"></app-video>
+  <app-article [article]="article"></app-article>
+</ng-container>
