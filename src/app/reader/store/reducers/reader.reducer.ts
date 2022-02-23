@@ -15,6 +15,7 @@ const initialState: ReaderState = {
   loading: false,
   error: null,
   filter: '',
+  drawerOpen: false,
 };
 export const readerReducer = createReducer(
   initialState,
@@ -60,5 +61,10 @@ export const readerReducer = createReducer(
         title: title,
       },
     })
-  )
+  ),
+
+  on(ReaderActions.toggleArticlesDrawer, (state) => ({
+    ...state,
+    drawerOpen: !state.drawerOpen,
+  }))
 );

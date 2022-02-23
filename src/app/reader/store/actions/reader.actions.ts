@@ -13,3 +13,7 @@ export const selectArticle = createAction(
   '[Reader Page] Select Article',
   props<{ key: string }>()
 );
+
+export const toggleArticlesDrawer = createAction(
+  '[Horizontal Navigation] Toggle Articles Drawer'
+);

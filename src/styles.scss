@@ -14,6 +14,8 @@ body {
 body {
   margin: 0;
   font-family: "Merriweather", serif;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1,
@@ -31,9 +33,8 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
+button {
+  font-family: "Playfair Display", serif;
 }
 
 ::-webkit-scrollbar {

@@ -1,0 +1,20 @@
+<div class="sticky top-0 w-full flex justify-between bg-soup-500 py-1 px-3">
+  <button
+    mat-button
+    color="accent"
+    class="text-lg p-4 flex items-center"
+    (click)="onToggleDrawer()"
+  >
+    <mat-icon *ngIf="(drawerOpened$ | async) === false">chevron_right</mat-icon>
+    <mat-icon *ngIf="drawerOpened$ | async">chevron_left</mat-icon>
+    <span> Browse Articles</span>
+  </button>
+  <div>
+    <button mat-button color="accent" class="text-lg" routerLink="/about">
+      About
+    </button>
+    <button mat-button color="accent" class="text-lg" routerLink="/contact">
+      Contact
+    </button>
+  </div>
+</div>

@@ -12,4 +12,5 @@ export interface ReaderState {
   error: string | null;
   loading: boolean;
   filter: string;
+  drawerOpen: boolean;
 }
