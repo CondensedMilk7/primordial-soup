@@ -15,6 +15,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { VideoComponent } from './components/video/video.component';
 import { VerticalNavigationComponent } from './vertical-navigation/vertical-navigation.component';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     ReactiveFormsModule,
     MatProgressBarModule,
+    MatButtonModule,
+    MatIconModule,
     RouterModule,
     StoreModule.forFeature('reader', readerReducer),
     EffectsModule.forFeature([ReaderEffects]),
