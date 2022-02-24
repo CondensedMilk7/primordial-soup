@@ -1,4 +1,4 @@
-<div class="sticky top-0 w-full flex justify-between bg-soup-500 py-1 px-3">
+<div class="sticky top-0 w-full flex bg-soup-500 py-1 px-3">
   <button
     mat-button
     color="accent"
@@ -9,6 +9,12 @@
     <mat-icon *ngIf="drawerOpened$ | async">chevron_left</mat-icon>
     <span> Browse Articles</span>
   </button>
+  <div
+    class="flex-grow text-center text-lg font-bold text-soup-50 flex justify-center"
+  >
+    <mat-icon color="accent">soup_kitchen</mat-icon>
+    <h1>Primordial Soup</h1>
+  </div>
   <div>
     <button mat-button color="accent" class="text-lg" routerLink="/about">
       About
