@@ -17,6 +17,7 @@ import { VerticalNavigationComponent } from './vertical-navigation/vertical-navi
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
     RouterModule,
     StoreModule.forFeature('reader', readerReducer),
     EffectsModule.forFeature([ReaderEffects]),

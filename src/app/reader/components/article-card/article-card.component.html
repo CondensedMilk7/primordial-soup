@@ -11,8 +11,14 @@
     </p>
     <div class="flex justify-between mt-3">
       <div>
-        <mat-icon color="primary" class="mx-0.5">article</mat-icon>
-        <mat-icon color="primary" *ngIf="article.videoUrl" class="mx-0.5"
+        <mat-icon color="primary" class="mx-0.5" matTooltip="Article available"
+          >article</mat-icon
+        >
+        <mat-icon
+          color="primary"
+          *ngIf="article.videoUrl"
+          class="mx-0.5"
+          matTooltip="Video available"
           >video_library</mat-icon
         >
       </div>
