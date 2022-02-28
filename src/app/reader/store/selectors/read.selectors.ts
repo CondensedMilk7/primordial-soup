@@ -18,9 +18,14 @@ export const selectError = createSelector(
   (state: ReaderState) => state.error
 );
 
-export const selectLoading = createSelector(
+export const selectLoadingList = createSelector(
   selectReader,
-  (state: ReaderState) => state.loading
+  (state: ReaderState) => state.loadingList
+);
+
+export const selectLoadingArticle = createSelector(
+  selectReader,
+  (state: ReaderState) => state.loadingArticle
 );
 
 export const selectFilteredArticles = createSelector(

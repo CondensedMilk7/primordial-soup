@@ -18,7 +18,7 @@ import { ReaderSelectors } from './store/selectors';
   encapsulation: ViewEncapsulation.None,
 })
 export class ReaderComponent implements OnInit {
-  loading$ = this.store.select(ReaderSelectors.selectLoading);
+  loading$ = this.store.select(ReaderSelectors.selectLoadingArticle);
   currentArticle$ = this.store.select(ReaderSelectors.selectCurrentArticle);
 
   constructor(private store: Store, private route: ActivatedRoute) {}

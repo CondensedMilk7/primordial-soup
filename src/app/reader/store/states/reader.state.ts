@@ -10,7 +10,8 @@ export interface ReaderState {
     date: number;
   };
   error: string | null;
-  loading: boolean;
+  loadingList: boolean;
+  loadingArticle: boolean;
   filter: string;
   drawerOpen: boolean;
 }

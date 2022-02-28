@@ -12,48 +12,65 @@ const initialState: ReaderState = {
     videoId: '',
     date: 0,
   },
-  loading: false,
+  loadingList: false,
+  loadingArticle: false,
   error: null,
   filter: '',
   drawerOpen: false,
 };
+
 export const readerReducer = createReducer(
   initialState,
-  on(ReaderActions.getArticlesList, (state) => ({ ...state, loading: true })),
+  on(
+    ReaderActions.getArticlesList,
+    (state): ReaderState => ({ ...state, loadingList: true })
+  ),
 
-  on(ReaderApiActions.getArticlesListSuccess, (state, { articles }) => ({
-    ...state,
-    articlesList: articles,
-    filteredList: ArticleUtils.filterArticles(articles, state.filter),
-    loading: false,
-  })),
-  on(ReaderApiActions.getArticlesListFailed, (state) => ({
-    ...state,
-    loading: false,
-    error: 'Error: Failed to retrieve articles',
-  })),
+  on(
+    ReaderApiActions.getArticlesListSuccess,
+    (state, { articles }): ReaderState => ({
+      ...state,
+      articlesList: articles,
+      filteredList: ArticleUtils.filterArticles(articles, state.filter),
+      loadingList: false,
+    })
+  ),
+  on(
+    ReaderApiActions.getArticlesListFailed,
+    (state): ReaderState => ({
+      ...state,
+      loadingList: false,
+      error: 'Error: Failed to retrieve articles',
+    })
+  ),
 
-  on(ReaderActions.searchArticle, (state, { filter }) => ({
-    ...state,
-    filteredList: ArticleUtils.filterArticles(state.articlesList, filter),
-  })),
+  on(
+    ReaderActions.searchArticle,
+    (state, { filter }): ReaderState => ({
+      ...state,
+      filteredList: ArticleUtils.filterArticles(state.articlesList, filter),
+    })
+  ),
 
-  on(ReaderActions.selectArticle, (state, { key }) => ({
-    ...state,
-    loading: true,
-    selectedArticle: {
-      key: key,
-      title: '',
-      videoId: '',
-      date: 0,
-    },
-  })),
+  on(
+    ReaderActions.selectArticle,
+    (state, { key }): ReaderState => ({
+      ...state,
+      loadingArticle: true,
+      selectedArticle: {
+        key: key,
+        title: '',
+        videoId: '',
+        date: 0,
+      },
+    })
+  ),
 
   on(
     ReaderApiActions.getArticleDataSuccess,
-    (state, { videoId, date, title }) => ({
+    (state, { videoId, date, title }): ReaderState => ({
       ...state,
-      loading: false,
+      loadingArticle: false,
       selectedArticle: {
         ...state.selectedArticle,
         videoId: videoId,
@@ -63,8 +80,11 @@ export const readerReducer = createReducer(
     })
   ),
 
-  on(ReaderActions.toggleArticlesDrawer, (state) => ({
-    ...state,
-    drawerOpen: !state.drawerOpen,
-  }))
+  on(
+    ReaderActions.toggleArticlesDrawer,
+    (state): ReaderState => ({
+      ...state,
+      drawerOpen: !state.drawerOpen,
+    })
+  )
 );

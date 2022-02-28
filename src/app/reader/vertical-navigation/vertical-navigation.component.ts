@@ -15,7 +15,7 @@ import { ReaderSelectors } from '../store/selectors';
   encapsulation: ViewEncapsulation.None,
 })
 export class VerticalNavigationComponent implements OnInit {
-  loading$ = this.store.select(ReaderSelectors.selectLoading);
+  loading$ = this.store.select(ReaderSelectors.selectLoadingList);
   filteredArticles$ = this.store.select(ReaderSelectors.selectFilteredArticles);
 
   constructor(private store: Store) {}
