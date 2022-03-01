@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="h-full overflow-auto bg-soup-50">
+  <mat-drawer
+    class="bg-soup-500 w-72"
+    mode="side"
+    [disableClose]="true"
+    [opened]="drawerOpened$ | async"
+  >
+    <app-vertical-navigation></app-vertical-navigation>
+  </mat-drawer>
+  <app-horizontal-navigation></app-horizontal-navigation>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

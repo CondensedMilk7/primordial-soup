@@ -1,0 +1,12 @@
+<ng-container *ngIf="videoId">
+  <div class="flex justify-center sm:p-8">
+    <iframe
+      id="ytplayer"
+      type="text/html"
+      [src]="embedUrl"
+      frameborder="0"
+      width="1200px"
+      class="sm:rounded-xl h-96 md:h-[720px]"
+    ></iframe>
+  </div>
+</ng-container>

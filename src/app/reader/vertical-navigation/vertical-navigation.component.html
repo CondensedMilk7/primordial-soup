@@ -1,0 +1,9 @@
+<div class="h-4">
+  <mat-progress-bar
+    *ngIf="loading$ | async"
+    mode="indeterminate"
+  ></mat-progress-bar>
+</div>
+<app-filter (search)="onSearch($event)"></app-filter>
+<div class="p-4"></div>
+<app-articles-list [articles]="filteredArticles$ | async"></app-articles-list>
