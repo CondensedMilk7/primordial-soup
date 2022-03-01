@@ -37,10 +37,10 @@ export const readerReducer = createReducer(
   ),
   on(
     ReaderApiActions.getArticlesListFailed,
-    (state): ReaderState => ({
+    (state, { error }): ReaderState => ({
       ...state,
       loadingList: false,
-      error: 'Error: Failed to retrieve articles',
+      error: error,
     })
   ),
 
@@ -77,6 +77,15 @@ export const readerReducer = createReducer(
         date: date,
         title: title,
       },
+    })
+  ),
+
+  on(
+    ReaderApiActions.getArticleDataFailed,
+    (state, { error }): ReaderState => ({
+      ...state,
+      loadingArticle: false,
+      error: error,
     })
   ),
 

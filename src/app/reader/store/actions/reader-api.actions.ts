@@ -7,19 +7,16 @@ export const getArticlesListSuccess = createAction(
 );
 
 export const getArticlesListFailed = createAction(
-  '[Reader API] Get Articles List Failed'
-);
-
-export const getArticleTextSuccess = createAction(
-  '[Reader API] Get Article Text Successfully',
-  props<{ articleText: string }>()
-);
-
-export const getArticleTextFailed = createAction(
-  '[Reader API] Get Article Text Failed'
+  '[Reader API] Get Articles List Failed',
+  props<{ error: string }>()
 );
 
 export const getArticleDataSuccess = createAction(
   '[Reader API] Get Article Data Successfully',
   props<{ title: string; videoId: string; date: number }>()
+);
+
+export const getArticleDataFailed = createAction(
+  '[Reader API] Get Article Data Failed',
+  props<{ error: string }>()
 );

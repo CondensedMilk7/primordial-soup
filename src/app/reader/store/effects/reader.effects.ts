@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { concatMap, map, tap } from 'rxjs';
+import { catchError, concatMap, map, of, tap } from 'rxjs';
 import { ReaderActions, ReaderApiActions } from '../actions';
 import { ArticlesService } from '../services';
 
@@ -10,13 +10,14 @@ export class ReaderEffects {
     return this.actions$.pipe(
       ofType(ReaderActions.getArticlesList),
       concatMap(() =>
-        this.articlesService
-          .getArticlesList()
-          .pipe(
-            map((articles) =>
-              ReaderApiActions.getArticlesListSuccess({ articles })
-            )
+        this.articlesService.getArticlesList().pipe(
+          map((articles) =>
+            ReaderApiActions.getArticlesListSuccess({ articles })
+          ),
+          catchError((error) =>
+            of(ReaderApiActions.getArticlesListFailed({ error: error.error }))
           )
+        )
       )
     );
   });
@@ -25,9 +26,12 @@ export class ReaderEffects {
     return this.actions$.pipe(
       ofType(ReaderActions.selectArticle),
       concatMap(({ key }) =>
-        this.articlesService
-          .getArticleData(key)
-          .pipe(map((data) => ReaderApiActions.getArticleDataSuccess(data)))
+        this.articlesService.getArticleData(key).pipe(
+          map((data) => ReaderApiActions.getArticleDataSuccess(data)),
+          catchError((error) =>
+            of(ReaderApiActions.getArticleDataFailed({ error: error.error }))
+          )
+        )
       )
     );
   });
