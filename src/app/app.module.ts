@@ -16,7 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HorizontalNavigationComponent } from './horizontal-navigation/horizontal-navigation.component';
+import { HorizontalNavigationComponent } from './common/horizontal-navigation/horizontal-navigation.component';
 
 @NgModule({
   declarations: [AppComponent, HorizontalNavigationComponent],
