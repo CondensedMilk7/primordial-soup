@@ -17,7 +17,8 @@ export class ReaderEffects {
           ),
           catchError((error) => {
             this.notificationService.notify(
-              `Failed to get articles list. Server responded with error ${error.error}`
+              `Failed to get articles list. Server responded with error ${error.error}`,
+              'close'
             );
             return of(
               ReaderApiActions.getArticlesListFailed({ error: error.error })
