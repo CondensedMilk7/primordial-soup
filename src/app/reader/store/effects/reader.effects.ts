@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, concatMap, map, of, tap } from 'rxjs';
+import { NotificationService } from 'src/app/common/notification/notification.service';
 import { ReaderActions, ReaderApiActions } from '../actions';
 import { ArticlesService } from '../services';
 
@@ -14,9 +15,15 @@ export class ReaderEffects {
           map((articles) =>
             ReaderApiActions.getArticlesListSuccess({ articles })
           ),
-          catchError((error) =>
-            of(ReaderApiActions.getArticlesListFailed({ error: error.error }))
-          )
+          catchError((error) => {
+            this.notificationService.notify(
+              `Failed to get articles list. Server responded with error ${error.error}`,
+              'close'
+            );
+            return of(
+              ReaderApiActions.getArticlesListFailed({ error: error.error })
+            );
+          })
         )
       )
     );
@@ -28,9 +35,15 @@ export class ReaderEffects {
       concatMap(({ key }) =>
         this.articlesService.getArticleData(key).pipe(
           map((data) => ReaderApiActions.getArticleDataSuccess(data)),
-          catchError((error) =>
-            of(ReaderApiActions.getArticleDataFailed({ error: error.error }))
-          )
+          catchError((error) => {
+            this.notificationService.notify(
+              `Failed to get article data. Server responded with error ${error.error}`,
+              'close'
+            );
+            return of(
+              ReaderApiActions.getArticleDataFailed({ error: error.error })
+            );
+          })
         )
       )
     );
@@ -38,6 +51,7 @@ export class ReaderEffects {
 
   constructor(
     private actions$: Actions,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private notificationService: NotificationService
   ) {}
 }
