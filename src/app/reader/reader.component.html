@@ -1,9 +1,4 @@
 <ng-container *ngIf="currentArticle$ | async as article">
-  <mat-progress-bar
-    mode="indeterminate"
-    color="primary"
-    *ngIf="loading$ | async"
-  ></mat-progress-bar>
   <app-video [videoId]="article.videoId"></app-video>
   <app-article [article]="article"></app-article>
 </ng-container>
