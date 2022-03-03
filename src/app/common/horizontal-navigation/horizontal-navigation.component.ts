@@ -15,6 +15,8 @@ import { ReaderSelectors } from '../../reader/store/selectors';
 })
 export class HorizontalNavigationComponent {
   drawerOpened$ = this.store.select(ReaderSelectors.selectDrawerOpen);
+  articleLoading$ = this.store.select(ReaderSelectors.selectLoadingArticle);
+
   constructor(private store: Store) {}
 
   onToggleDrawer() {
