@@ -1,25 +1,36 @@
-<div class="sticky top-0 w-full flex bg-soup-500 py-1 px-3">
+<div class="w-full flex pt-2 px-3">
+  <!-- Browse Articles -->
   <button
-    mat-button
-    color="accent"
-    class="text-lg p-4 flex items-center"
+    class="text-lg flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-soup-900 transition-all text-can-50 shadow-lg shadow-gray-900"
+    [ngClass]="{
+      'ml-0': (drawerOpened$ | async),
+      'ml-10': (drawerOpened$ | async) === false
+    }"
     (click)="onToggleDrawer()"
   >
     <mat-icon *ngIf="(drawerOpened$ | async) === false">chevron_right</mat-icon>
     <mat-icon *ngIf="drawerOpened$ | async">chevron_left</mat-icon>
-    <span> Browse Articles</span>
+    <span>Browse Articles</span>
   </button>
+  <!-- Divider -->
   <div
     class="flex-grow text-center text-lg font-bold text-can-500 flex justify-center"
   >
-    <mat-icon color="accent">soup_kitchen</mat-icon>
-    <h1>Primordial Soup</h1>
+    <!-- <mat-icon color="accent">soup_kitchen</mat-icon>
+    <h1>Primordial Soup</h1> -->
   </div>
+  <!-- Other nav actions -->
   <div>
-    <button mat-button color="accent" class="text-lg" routerLink="/about">
+    <button
+      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-soup-900 transition-colors text-can-50 mr-10 shadow-lg shadow-gray-900"
+      routerLink="/about"
+    >
       About
     </button>
-    <button mat-button color="accent" class="text-lg" routerLink="/contact">
+    <button
+      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-soup-900 transition-colors text-can-50 mr-10 shadow-lg shadow-gray-900"
+      routerLink="/contact"
+    >
       Contact
     </button>
   </div>

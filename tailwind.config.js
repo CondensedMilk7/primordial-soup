@@ -1,3 +1,5 @@
+const tailwindColors = require("tailwindcss/colors");
+
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
@@ -31,6 +33,7 @@ module.exports = {
         800: "#ecd8e8",
         900: "#e8d0e4",
       },
+      gray: tailwindColors.gray,
     },
   },
   plugins: [],
