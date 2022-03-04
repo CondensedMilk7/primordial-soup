@@ -8,4 +8,9 @@ export const appRoutes: Route[] = [
     component: ReaderComponent,
     pathMatch: 'full',
   },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./contact/contact.module').then((m) => m.ContactModule),
+  },
 ];
