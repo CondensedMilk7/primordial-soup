@@ -1,28 +1,57 @@
-<div class="flex justify-center items-center pt-20">
+<div class="flex flex-col justify-center items-center pt-10">
+  <h1 class="text-2xl font-bold">Contact Us</h1>
+  <p>Have something to tell us?</p>
   <form
     [formGroup]="contactForm"
     (submit)="onSubmit()"
-    class="flex flex-col items-center w-96"
+    class="flex flex-col items-center max-w-4xl"
   >
-    <label for="name" class="w-full">Name</label>
-    <input type="text" id="name" formControlName="name" class="w-full" />
+    <label for="name" class="w-full mb-1">Name</label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Enter your name..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
 
-    <label for="surname" class="w-full">Surname</label>
-    <input type="text" id="surname" formControlName="surname" class="w-full" />
+    <label for="surname" class="w-full mb-1">Surname</label>
+    <input
+      type="text"
+      id="surname"
+      formControlName="surname"
+      placeholder="Enter your surname..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
 
-    <label for="email" class="w-full">Email</label>
-    <input type="text" id="email" formControlName="email" class="w-full" />
+    <label for="email" class="w-full mb-1">Email</label>
+    <input
+      type="text"
+      id="email"
+      formControlName="email"
+      placeholder="Enter your email..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
 
-    <label for="message" class="w-full">Message</label>
+    <label for="message" class="w-full mb-1">Message</label>
     <textarea
       name="message"
       id="message"
+      [placeholder]="
+        'Dear Primordial Soup,\nI would like to talk to you about...'
+      "
       cols="30"
       rows="10"
-      class="w-full"
+      class="w-full rounded-xl p-2 mb-6 border-2 border-soup-200"
       formControlName="message"
     ></textarea>
 
-    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    <button
+      type="submit"
+      [disabled]="contactForm.invalid"
+      class="bg-soup-600 py-2 px-4 rounded-full text-can-50"
+    >
+      Submit
+    </button>
   </form>
 </div>
