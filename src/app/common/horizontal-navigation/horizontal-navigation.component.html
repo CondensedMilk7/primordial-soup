@@ -7,7 +7,7 @@
 <div class="w-full flex pt-2 px-3">
   <!-- Browse Articles -->
   <button
-    class="text-lg flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-all text-can-50 shadow-sm shadow-gray-400"
+    class="text-lg flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-all text-can-50 bg-opacity-90 shadow-sm shadow-gray-400"
     [ngClass]="{
       'ml-0': (drawerOpened$ | async),
       'ml-10': (drawerOpened$ | async) === false
@@ -28,14 +28,14 @@
   <!-- Other nav actions -->
   <div>
     <button
-      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 mr-10 shadow-sm shadow-gray-400"
+      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 bg-opacity-90 mr-10 shadow-sm shadow-gray-400"
       routerLink="/about"
       routerLinkActive="bg-can-800 text-soup-900"
     >
       About
     </button>
     <button
-      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 mr-10 shadow-sm shadow-gray-400"
+      class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 bg-opacity-90 mr-10 shadow-sm shadow-gray-400"
       routerLink="/contact"
       routerLinkActive="bg-can-800 text-soup-900"
     >
