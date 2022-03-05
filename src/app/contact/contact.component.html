@@ -11,7 +11,7 @@
       type="text"
       id="name"
       formControlName="name"
-      placeholder="Enter your name..."
+      placeholder="your name..."
       class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
     />
 
@@ -20,7 +20,7 @@
       type="text"
       id="surname"
       formControlName="surname"
-      placeholder="Enter your surname..."
+      placeholder="your surname..."
       class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
     />
 
@@ -29,7 +29,7 @@
       type="text"
       id="email"
       formControlName="email"
-      placeholder="Enter your email..."
+      placeholder="your email..."
       class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
     />
 
@@ -49,6 +49,7 @@
     <button
       type="submit"
       [disabled]="contactForm.invalid"
+      [ngClass]="{ 'bg-soup-100': contactForm.invalid }"
       class="bg-soup-600 py-2 px-4 rounded-full text-can-50"
     >
       Submit
