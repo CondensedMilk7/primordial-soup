@@ -1,1 +1,28 @@
-<div></div>
+<div class="flex justify-center items-center pt-20">
+  <form
+    [formGroup]="contactForm"
+    (submit)="onSubmit()"
+    class="flex flex-col items-center w-96"
+  >
+    <label for="name" class="w-full">Name</label>
+    <input type="text" id="name" formControlName="name" class="w-full" />
+
+    <label for="surname" class="w-full">Surname</label>
+    <input type="text" id="surname" formControlName="surname" class="w-full" />
+
+    <label for="email" class="w-full">Email</label>
+    <input type="text" id="email" formControlName="email" class="w-full" />
+
+    <label for="message" class="w-full">Message</label>
+    <textarea
+      name="message"
+      id="message"
+      cols="30"
+      rows="10"
+      class="w-full"
+      formControlName="message"
+    ></textarea>
+
+    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+  </form>
+</div>
