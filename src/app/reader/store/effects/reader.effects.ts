@@ -39,7 +39,8 @@ export class ReaderEffects {
           catchError((error) => {
             this.notificationService.notify(
               `Failed to get article data. Server responded with error ${error.error}`,
-              'close'
+              'close',
+              'error'
             );
             return of(
               ReaderApiActions.getArticleDataFailed({ error: error.error })
