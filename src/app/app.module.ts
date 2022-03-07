@@ -17,7 +17,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HorizontalNavigationComponent } from './common/horizontal-navigation/horizontal-navigation.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+} from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
@@ -50,7 +53,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
     EffectsModule.forRoot([]),
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

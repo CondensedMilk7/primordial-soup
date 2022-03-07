@@ -34,6 +34,8 @@ module.exports = {
         900: "#e8d0e4",
       },
       gray: tailwindColors.gray,
+      red: tailwindColors.red,
+      green: tailwindColors.green,
     },
   },
   plugins: [],

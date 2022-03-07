@@ -1,0 +1,85 @@
+<div class="flex flex-col justify-center items-center pt-8 pb-2">
+  <h1 class="text-2xl font-bold">Contact Us</h1>
+  <p>Have something to tell us?</p>
+  <form
+    [formGroup]="contactForm"
+    (submit)="onSubmit()"
+    class="flex flex-col items-center max-w-4xl"
+  >
+    <!-- Name -->
+    <label for="name" class="w-full mb-1">Name</label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="your name..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
+
+    <!-- Surname -->
+    <label for="surname" class="w-full mb-1">Surname</label>
+    <input
+      type="text"
+      id="surname"
+      formControlName="surname"
+      placeholder="your surname..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
+
+    <!-- Email -->
+    <label for="email" class="w-full mb-1">Email</label>
+    <span
+      *ngIf="
+        contactForm.controls['email'].invalid &&
+        contactForm.controls['email'].touched
+      "
+      class="w-full text-soup-400"
+      >*Please enter a valid email</span
+    >
+    <input
+      type="text"
+      id="email"
+      formControlName="email"
+      placeholder="your email..."
+      class="w-full rounded-full p-2 mb-6 border-2 border-soup-200"
+    />
+
+    <!-- Message -->
+    <label for="message" class="w-full mb-1">Message</label>
+    <textarea
+      name="message"
+      id="message"
+      [placeholder]="
+        'Dear Primordial Soup,\nI would like to talk to you about...'
+      "
+      cols="30"
+      rows="10"
+      class="w-full rounded-xl p-2 border-2 border-soup-200"
+      formControlName="message"
+    ></textarea>
+    <span
+      *ngIf="contactForm.invalid && contactForm.touched"
+      class="w-full text-soup-400"
+      >*All fields are required</span
+    >
+
+    <!-- Action -->
+    <button
+      type="submit"
+      [disabled]="(loading$ | async) || contactForm.invalid"
+      [ngClass]="{
+        'bg-soup-100': contactForm.invalid,
+        'bg-soup-600 ': contactForm.valid
+      }"
+      class="py-2 mt-6 w-24 rounded-full text-can-50 text-center"
+    >
+      <span *ngIf="(loading$ | async) === false">Submit</span>
+      <span
+        *ngIf="loading$ | async"
+        class="w-full flex justify-center items-center"
+      >
+        <mat-spinner color="accent" [diameter]="'25'"></mat-spinner>
+      </span>
+    </button>
+  </form>
+</div>
