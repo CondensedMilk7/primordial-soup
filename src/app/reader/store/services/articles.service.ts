@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ArticleData } from '../models/article-data.model';
 import { ArticleListItem } from '../models/article-list.model';
 
 @Injectable({ providedIn: 'root' })
@@ -21,8 +22,6 @@ export class ArticlesService {
   }
 
   getArticleData(key: string) {
-    return this.http.get<{ title: string; videoId: string; date: number }>(
-      `${this.baseUrl}${key}/data.json`
-    );
+    return this.http.get<ArticleData>(`${this.baseUrl}${key}/data.json`);
   }
 }
