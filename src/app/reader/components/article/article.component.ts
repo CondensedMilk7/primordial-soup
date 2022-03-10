@@ -20,11 +20,14 @@ export class ArticleComponent {
     key: '',
     videoId: '',
     date: 0,
+    references: [''],
   };
 
   baseUrl = environment.githubUrl;
 
   constructor(private markdownService: MarkdownService) {
+    // Markdown renderer configuration
+
     // Heading configuration
     this.markdownService.renderer.heading = (text, level) => {
       if (level === 1) {
@@ -32,11 +35,11 @@ export class ArticleComponent {
         return '';
       } else if (level === 2) {
         return `
-          <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
+          <h${level} class="text-2xl font-bold mb-8" >${text}</h${level}>
         `;
       } else {
         return `
-          <h${level} class="text-lg font-bold" >${text}</h${level}>
+          <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
         `;
       }
     };

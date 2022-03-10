@@ -13,7 +13,12 @@ export const getArticlesListFailed = createAction(
 
 export const getArticleDataSuccess = createAction(
   '[Reader API] Get Article Data Successfully',
-  props<{ title: string; videoId: string; date: number }>()
+  props<{
+    title: string;
+    videoId: string;
+    date: number;
+    references: string[];
+  }>()
 );
 
 export const getArticleDataFailed = createAction(

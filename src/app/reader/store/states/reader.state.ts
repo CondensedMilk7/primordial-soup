@@ -8,6 +8,7 @@ export interface ReaderState {
     key: string;
     videoId: string;
     date: number;
+    references: string[];
   };
   error: string | null;
   loadingList: boolean;
