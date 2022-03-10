@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { MarkdownService } from 'ngx-markdown';
 import { environment } from 'src/environments/environment';
+import { ArticleUtils } from '../../store/services/article.utils';
 
 @Component({
   selector: 'app-article',
@@ -58,5 +59,9 @@ export class ArticleComponent {
         <ul class="${listStyle} list-inside mb-8 leading-relaxed" >${body}</ul>
       `;
     };
+  }
+
+  searchLink(type: 'libgen' | 'sci-hub', title: string) {
+    return ArticleUtils.generateSearchLink(type, title);
   }
 }

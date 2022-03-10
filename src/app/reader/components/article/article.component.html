@@ -16,14 +16,40 @@
       <markdown [src]="baseUrl + article.key + '/text.md'"></markdown>
     </section>
     <!-- References -->
-    <section *ngIf="article.references.length > 0" class="mt-8">
+    <section class="mt-8">
       <h1 class="text-2xl font-bold text-center mb-8">References</h1>
-      <p
-        class="pl-8 -indent-8 mb-6"
-        *ngFor="let reference of article.references"
-      >
-        {{ reference }}
-      </p>
+      <ng-container *ngFor="let reference of article.references">
+        <p class="pl-8 -indent-8">
+          {{ reference }}
+        </p>
+        <div class="mb-6 flex items-center">
+          <a
+            [href]="searchLink('libgen', reference)"
+            target="_blank"
+            class="text-soup-300 mr-2"
+          >
+            <img
+              src="/assets/icons/libgen.png"
+              alt="sci-hub"
+              class="inline w-8 rounded-full"
+            />
+            <span class="underline">[libgen]</span>
+          </a>
+          <a
+            *ngIf="reference.includes('doi.org')"
+            [href]="searchLink('sci-hub', reference)"
+            target="_blank"
+            class="text-soup-300 mr-2"
+          >
+            <img
+              src="/assets/icons/sci-hub.png"
+              alt="sci-hub"
+              class="inline w-8 rounded-full"
+            />
+            <span class="underline">[sci-hub]</span></a
+          >
+        </div>
+      </ng-container>
     </section>
   </div>
 </article>
