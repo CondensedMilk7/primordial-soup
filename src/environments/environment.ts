@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  snackBarDuration: 5000,
   githubUrl:
     'https://raw.githubusercontent.com/CondensedMilk7/mock-articles/master/',
   libgenUrl: 'https://libgen.fun/search.php?req=',

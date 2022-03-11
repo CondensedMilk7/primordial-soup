@@ -57,7 +57,10 @@ import { MatMenuModule } from '@angular/material/menu';
     EffectsModule.forRoot([]),
   ],
   providers: [
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } },
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: { duration: environment.snackBarDuration },
+    },
   ],
   bootstrap: [AppComponent],
 })

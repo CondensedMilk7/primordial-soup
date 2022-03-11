@@ -1,4 +1,6 @@
 <app-article-card
   *ngFor="let article of articles"
   [article]="article"
+  [routerLink]="'/reader/' + article.key"
+  (click)="onCardClicked()"
 ></app-article-card>
