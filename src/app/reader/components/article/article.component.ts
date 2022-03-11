@@ -36,11 +36,11 @@ export class ArticleComponent {
         return '';
       } else if (level === 2) {
         return `
-          <h${level} class="text-2xl font-bold mb-8" >${text}</h${level}>
+          <h${level} class="text-xl sm:text-2xl font-bold mb-8 text-left" >${text}</h${level}>
         `;
       } else {
         return `
-          <h${level} class="text-xl font-bold mb-8" >${text}</h${level}>
+          <h${level} class="text-lg sm:text-xl font-bold mb-8 text-left" >${text}</h${level}>
         `;
       }
     };
@@ -56,12 +56,12 @@ export class ArticleComponent {
     this.markdownService.renderer.list = (body, ordered) => {
       const listStyle = ordered ? 'list-decimal' : 'list-disc';
       return `
-        <ul class="${listStyle} list-inside mb-8 leading-relaxed" >${body}</ul>
+        <ul class="${listStyle} list-inside mb-8 leading-relaxed text-left" >${body}</ul>
       `;
     };
   }
 
-  searchLink(type: 'libgen' | 'sci-hub', title: string) {
-    return ArticleUtils.generateSearchLink(type, title);
+  searchLink(type: 'libgen' | 'sci-hub', reference: string) {
+    return ArticleUtils.generateSearchLink(type, reference);
   }
 }

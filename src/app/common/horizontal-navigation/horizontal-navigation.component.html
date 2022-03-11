@@ -5,10 +5,10 @@
       color="primary"
     ></mat-progress-bar>
   </div>
-  <div class="w-full flex pt-2 px-3">
+  <div class="w-full flex py-2 px-3">
     <!-- Browse Articles -->
     <button
-      class="text-lg flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-all text-can-50 bg-opacity-90 shadow-sm"
+      class="text-lg hidden lg:flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-all text-can-50 bg-opacity-90 shadow-sm"
       [ngClass]="{
         'ml-0': (drawerOpened$ | async),
         'ml-10': (drawerOpened$ | async) === false
@@ -24,12 +24,9 @@
     <!-- Divider -->
     <div
       class="flex-grow text-center text-lg font-bold text-can-500 flex justify-center"
-    >
-      <!-- <mat-icon color="accent">soup_kitchen</mat-icon>
-    <h1>Primordial Soup</h1> -->
-    </div>
+    ></div>
     <!-- Other nav actions -->
-    <div>
+    <div class="hidden lg:block">
       <button
         class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 bg-opacity-90 mr-10 shadow-sm"
         routerLink="/about"
@@ -44,6 +41,30 @@
       >
         Contact
       </button>
+    </div>
+    <div class="flex justify-between lg:hidden w-24">
+      <button
+        mat-icon-button
+        class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
+        (click)="onToggleDrawer()"
+      >
+        <mat-icon color="accent">plagiarism</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
+      >
+        <mat-icon color="accent">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/about">
+          <mat-icon>question_mark</mat-icon><span>About</span>
+        </button>
+        <button mat-menu-item routerLink="/contact">
+          <mat-icon>mail</mat-icon><span>Contact</span>
+        </button>
+      </mat-menu>
     </div>
   </div>
 </div>

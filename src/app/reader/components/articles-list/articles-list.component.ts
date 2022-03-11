@@ -1,7 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
+  Output,
   ViewEncapsulation,
 } from '@angular/core';
 import { ArticleListItem } from '../../store/models/article-list.model';
@@ -13,5 +15,10 @@ import { ArticleListItem } from '../../store/models/article-list.model';
   encapsulation: ViewEncapsulation.None,
 })
 export class ArticlesListComponent {
+  @Output() cardClicked = new EventEmitter<void>();
   @Input() articles!: ArticleListItem[] | null;
+
+  onCardClicked() {
+    this.cardClicked.emit();
+  }
 }
