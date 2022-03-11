@@ -18,11 +18,13 @@
     <!-- References -->
     <section class="mt-8">
       <h1 class="text-2xl font-bold text-center mb-8">References</h1>
+      <!-- APA reference -->
       <ng-container *ngFor="let reference of article.references">
         <p class="pl-8 -indent-8">
           {{ reference }}
         </p>
         <div class="mb-6 flex items-center">
+          <!-- Libgen -->
           <a
             [href]="searchLink('libgen', reference)"
             target="_blank"
@@ -30,11 +32,13 @@
           >
             <img
               src="/assets/icons/libgen.png"
-              alt="sci-hub"
+              alt="libgen"
               class="inline w-8 rounded-full"
             />
             <span class="underline">[libgen]</span>
           </a>
+          <!-- Sci-hub -->
+          <!-- Link is available if reference includes DOI -->
           <a
             *ngIf="reference.includes('doi.org')"
             [href]="searchLink('sci-hub', reference)"

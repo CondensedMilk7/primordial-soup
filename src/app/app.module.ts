@@ -22,6 +22,7 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
 } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent, HorizontalNavigationComponent],
@@ -30,11 +31,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     BrowserAnimationsModule,
     HttpClientModule,
 
+    // Angular material
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    MatMenuModule,
 
     // Custom modules
     ReaderModule,
