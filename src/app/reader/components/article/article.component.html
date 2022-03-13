@@ -1,14 +1,15 @@
 <article class="py-8 px-4 flex flex-col items-center text-sm sm:text-base">
   <div class="max-w-4xl">
-    <!-- Date -->
-    <ng-container *ngIf="article.date">
-      <div class="flex justify-center text-center">
-        <div class="w-40">
-          <p class="font-bold">Date {{ article.date | date: "dd/mm/yyyy" }}</p>
-          <div class="bg-soup-900 h-0.5 mt-2"></div>
-        </div>
+    <!-- Date & author-->
+    <div class="flex flex-col justify-center items-center text-center">
+      <div class="w-40">
+        <p class="font-bold">Date: {{ article.date | date: "dd/MM/yyyy" }}</p>
+        <div class="bg-soup-900 h-0.5 mt-2"></div>
       </div>
-    </ng-container>
+      <div class="mt-4">
+        <p><strong>Author(s): </strong>{{ article.author }}</p>
+      </div>
+    </div>
     <!-- Main title -->
     <h1 class="text-center text-3xl sm:text-4xl font-bold my-10">
       {{ article.title }}

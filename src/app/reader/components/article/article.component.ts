@@ -20,11 +20,12 @@ export class ArticleComponent {
     title: '',
     key: '',
     videoId: '',
-    date: 0,
+    date: '',
+    author: '',
     references: [''],
   };
 
-  baseUrl = environment.githubUrl;
+  baseUrl = environment.github.articleBaseUrl;
 
   constructor(private markdownService: MarkdownService) {
     // Markdown renderer configuration

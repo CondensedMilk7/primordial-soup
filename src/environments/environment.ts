@@ -5,8 +5,14 @@
 export const environment = {
   production: false,
   snackBarDuration: 5000,
-  githubUrl:
-    'https://raw.githubusercontent.com/CondensedMilk7/mock-articles/master/',
+  github: {
+    baseUrl:
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/',
+    articlesListUrl:
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/articles-list.json',
+    articleBaseUrl:
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/articles/',
+  },
   libgenUrl: 'https://libgen.fun/search.php?req=',
   scihubUrl: 'https://sci-hub.se/',
 };

@@ -7,7 +7,8 @@ export interface ReaderState {
     title: string;
     key: string;
     videoId: string;
-    date: number;
+    date: string;
+    author: string;
     references: string[];
   };
   error: string | null;

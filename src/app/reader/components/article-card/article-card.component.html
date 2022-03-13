@@ -13,13 +13,16 @@
         <mat-icon color="primary" class="mx-0.5" matTooltip="Article available"
           >article</mat-icon
         >
-        <mat-icon
-          color="primary"
+        <a
           *ngIf="article.videoUrl"
-          class="mx-0.5"
-          matTooltip="Video available"
-          >video_library</mat-icon
+          [href]="article.videoUrl"
+          target="_blank"
+          class="z-10"
         >
+          <mat-icon color="primary" class="mx-0.5" matTooltip="Video available"
+            >video_library</mat-icon
+          >
+        </a>
       </div>
       <div class="flex items-center">
         <img src="/assets/icons/calendar.svg" class="w-5 h-5 mr-1" />

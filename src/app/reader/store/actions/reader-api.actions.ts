@@ -16,7 +16,8 @@ export const getArticleDataSuccess = createAction(
   props<{
     title: string;
     videoId: string;
-    date: number;
+    date: string;
+    author: string;
     references: string[];
   }>()
 );
