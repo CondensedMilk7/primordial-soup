@@ -44,4 +44,9 @@ export class ArticleUtils {
 
     return url;
   }
+
+  public static sortAlphabetically(array: string[]) {
+    let result = [...array];
+    return result.sort();
+  }
 }

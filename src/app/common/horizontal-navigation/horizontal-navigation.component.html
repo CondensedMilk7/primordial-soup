@@ -45,6 +45,7 @@
     <div class="flex justify-between lg:hidden w-24">
       <button
         mat-icon-button
+        matTooltip="Browse articles"
         class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
         (click)="onToggleDrawer()"
       >
@@ -53,6 +54,7 @@
       <button
         mat-icon-button
         [matMenuTriggerFor]="menu"
+        matTooltip="Menu"
         class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
       >
         <mat-icon color="accent">menu</mat-icon>

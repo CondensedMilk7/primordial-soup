@@ -81,7 +81,7 @@ export const readerReducer = createReducer(
         date: date,
         title: title,
         author: author,
-        references: references,
+        references: ArticleUtils.sortAlphabetically(references), // Sorted alphabetically
       },
     })
   ),
