@@ -1,6 +1,7 @@
 export interface ArticleData {
   title: string;
   videoId: string;
-  date: number;
+  date: string;
   references: string[];
+  author: string;
 }

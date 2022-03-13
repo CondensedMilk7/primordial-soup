@@ -1,8 +1,7 @@
 export interface ArticleListItem {
   key: string;
   title: string;
-  date: number;
+  date: string;
   thumbnail: string;
-  description?: string;
   videoUrl?: string;
 }
