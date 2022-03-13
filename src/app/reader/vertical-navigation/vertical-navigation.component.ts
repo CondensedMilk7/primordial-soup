@@ -17,8 +17,8 @@ import { ReaderSelectors } from '../store/selectors';
   encapsulation: ViewEncapsulation.None,
 })
 export class VerticalNavigationComponent implements OnInit {
-  loading$ = this.store.select(ReaderSelectors.selectLoadingList);
   filteredArticles$ = this.store.select(ReaderSelectors.selectFilteredArticles);
+  drawerOpen$ = this.store.select(ReaderSelectors.selectDrawerOpen);
 
   screenSmall = false;
 
@@ -42,8 +42,10 @@ export class VerticalNavigationComponent implements OnInit {
     this.store.dispatch(ReaderActions.searchArticle({ filter: filterVal }));
   }
 
+  // Navigation happens through routerlink,
+  // this method is only needed to close
+  // The drawer when the screen is small
   onCardClicked() {
-    // Close drawer after a card is clicked, only if the screen is small.
     if (this.screenSmall) {
       this.toggleDrawer();
     }

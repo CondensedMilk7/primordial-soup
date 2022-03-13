@@ -1,24 +1,20 @@
-<div class="h-4">
-  <mat-progress-bar
-    *ngIf="loading$ | async"
-    mode="indeterminate"
-  ></mat-progress-bar>
-</div>
-<div class="mb-8 flex">
-  <app-filter class="flex-grow" (search)="onSearch($event)"></app-filter>
-  <button
-    class="mx-2"
-    mat-button
-    color="accent"
-    *ngIf="screenSmall"
-    (click)="toggleDrawer()"
-  >
-    Close
-  </button>
-</div>
-<div class="flex justify-center">
-  <app-articles-list
-    [articles]="filteredArticles$ | async"
-    (cardClicked)="onCardClicked()"
-  ></app-articles-list>
-</div>
+<ng-container *ngIf="drawerOpen$ | async">
+  <div class="my-6 flex">
+    <app-filter class="flex-grow" (search)="onSearch($event)"></app-filter>
+    <button
+      class="mx-2"
+      mat-button
+      color="accent"
+      *ngIf="screenSmall"
+      (click)="toggleDrawer()"
+    >
+      Close
+    </button>
+  </div>
+  <div class="flex justify-center">
+    <app-articles-list
+      [articles]="filteredArticles$ | async"
+      (cardClicked)="onCardClicked()"
+    ></app-articles-list>
+  </div>
+</ng-container>

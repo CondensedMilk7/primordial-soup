@@ -23,6 +23,7 @@ import {
 } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [AppComponent, HorizontalNavigationComponent],
@@ -38,6 +39,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSnackBarModule,
     MatProgressBarModule,
     MatMenuModule,
+    MatTooltipModule,
 
     // Custom modules
     ReaderModule,

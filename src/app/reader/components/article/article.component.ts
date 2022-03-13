@@ -57,7 +57,14 @@ export class ArticleComponent {
     this.markdownService.renderer.list = (body, ordered) => {
       const listStyle = ordered ? 'list-decimal' : 'list-disc';
       return `
-        <ul class="${listStyle} list-inside mb-8 leading-relaxed text-left" >${body}</ul>
+        <ul class="${listStyle} list-inside mb-8 leading-relaxed text-left pl-4" >${body}</ul>
+      `;
+    };
+
+    // Blockquote configuration
+    this.markdownService.renderer.blockquote = (quote) => {
+      return `
+        <blockquote class="pl-4 sm:pl-8" >${quote}</blockquote>
       `;
     };
   }
