@@ -1,17 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ContactMessage } from '../../contact-message.model';
+import { ContactSuccessResponse } from '../models';
 
 @Injectable()
 export class ContactService {
-  mockResponse = new Observable<string>((observer) => {
-    setTimeout(() => {
-      observer.next('Message sent!');
-    }, 1000);
-  });
-  // Will stay like this untill backend is built
+  contactUrl = environment.contactUrl;
+
+  constructor(private httpClient: HttpClient) {}
+
   sendMessage(message: ContactMessage) {
-    console.log(message);
-    return this.mockResponse;
+    return this.httpClient.post<ContactSuccessResponse>(
+      this.contactUrl,
+      message
+    );
   }
 }
