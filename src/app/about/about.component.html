@@ -5,7 +5,7 @@
   <h1 class="text-4xl md:text-6xl text-can-50 font-bold">PRIMORDIAL SOUP</h1>
 </div>
 <main
-  class="bg-can-600 w-full flex flex-col items-center px-4 sm:text-base text-sm"
+  class="bg-can-600 w-full flex flex-col items-center px-4 pb-8 sm:text-base text-sm"
 >
   <div class="max-w-4xl">
     <section
@@ -70,12 +70,12 @@
             />
             <strong>Paypal: </strong>
             <a
-              href="https://paypal.me/primordialpridon"
+              [href]="donationLinks.paypal"
               target="_blank"
               class="underline text-lg"
             >
-              paypal.me/primordialpridon</a
-            >
+              {{ donationLinks.paypal.split("https://")[1] }}
+            </a>
           </p>
           <p>(more options will be added in time)</p>
         </div>

@@ -12,4 +12,10 @@ export const environment = {
   contactUrl: 'https://formspree.io/f/xlezlgjw',
   libgenUrl: 'https://libgen.fun/search.php?req=',
   scihubUrl: 'https://sci-hub.se/',
+  socialLinks: {
+    facebook: '',
+    instagram: '',
+    youtube: 'https://www.youtube.com/channel/UCXu6mQQurrnJXPcoX_oOmZA',
+    githubRepo: 'https://github.com/CondensedMilk7/primordial-soup',
+  },
 };
