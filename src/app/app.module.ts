@@ -25,9 +25,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FooterComponent } from './common/footer/footer.component';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, HorizontalNavigationComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HorizontalNavigationComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
