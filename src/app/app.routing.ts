@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { ReaderComponent } from './reader/reader.component';
 
 export const appRoutes: Route[] = [
@@ -18,4 +19,5 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
   },
+  { path: '**', component: PageNotFoundComponent, pathMatch: 'full' },
 ];
