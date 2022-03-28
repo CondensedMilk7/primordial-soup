@@ -10,11 +10,7 @@
         <p><strong>Author(s): </strong>{{ article.author }}</p>
       </div>
     </div>
-    <!-- Main title -->
-    <h1 class="text-center text-3xl sm:text-4xl font-bold my-10">
-      {{ article.title }}
-    </h1>
-    <!-- Text -->
+    <!-- Article body -->
     <section class="text-justify">
       <markdown [src]="baseUrl + article.key + '/text.md'"></markdown>
     </section>

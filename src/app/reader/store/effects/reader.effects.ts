@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, concatMap, map, of, tap } from 'rxjs';
+import { catchError, concatMap, map, of } from 'rxjs';
 import { NotificationService } from 'src/app/common/notification/notification.service';
 import { ReaderActions, ReaderApiActions } from '../actions';
 import { ArticlesService } from '../services';
