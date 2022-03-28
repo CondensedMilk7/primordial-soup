@@ -33,8 +33,11 @@ export class ArticleComponent {
     // Heading configuration
     this.markdownService.renderer.heading = (text, level) => {
       if (level === 1) {
-        // exclude h1 as it is only used for main title, which is displayed from article metadata
-        return '';
+        return `
+          <h1 class="text-center text-3xl sm:text-4xl font-bold my-10 sm:my-20">
+            ${text}
+          </h1>
+        `;
       } else if (level === 2) {
         return `
           <h${level} class="text-xl sm:text-2xl font-bold mb-8 text-left" >${text}</h${level}>
