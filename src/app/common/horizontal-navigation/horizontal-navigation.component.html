@@ -1,8 +1,9 @@
 <div class="sticky top-0 z-10">
-  <div class="h-0.5 bg-soup-600">
+  <div class="h-1 fixed w-screen">
     <mat-progress-bar
-      *ngIf="articleLoading$ | async"
       color="primary"
+      mode="indeterminate"
+      *ngIf="articleLoading$ | async"
     ></mat-progress-bar>
   </div>
   <div class="w-full flex py-2 px-3">
