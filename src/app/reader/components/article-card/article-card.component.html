@@ -2,8 +2,15 @@
   class="flex flex-col flex-1 rounded-3xl max-w-[252px] overflow-hidden bg-can-500 mb-8 mx-4 cursor-pointer shadow-md hover:shadow-soup-200 transition-shadow"
 >
   <!-- Thumbnail -->
-  <div class="h-2/3">
-    <img class="w-full" [src]="article.thumbnail" />
+  <div class="h-[141px]">
+    <mat-progress-spinner
+      *ngIf="imageLoaded === false"
+      color="primary"
+      mode="indeterminate"
+      [diameter]="48"
+      class="m-auto my-10"
+    ></mat-progress-spinner>
+    <img class="w-full" [src]="article.thumbnail" (load)="imgLoaded()" />
   </div>
   <div class="p-4 text-sm">
     <!-- Title -->
