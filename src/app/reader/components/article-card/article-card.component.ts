@@ -14,4 +14,9 @@ import { ArticleListItem } from '../../store/models/article-list.model';
 })
 export class ArticleCardComponent {
   @Input() article!: ArticleListItem;
+  imageLoaded = false;
+
+  imgLoaded() {
+    this.imageLoaded = true;
+  }
 }
