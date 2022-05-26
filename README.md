@@ -36,3 +36,8 @@ Does the application have any issues? Would you like to have a new feature added
 
 Thinking about adding a new feature to this app? or some simple improvements and refactors? Any contribution that improves the app is welcome!
 Simply fork or clone this repository, create a branch following the standard [branch naming](https://gist.github.com/revett/88ee5abf5a9a097b4c88) and [commit conventions](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) and create a pull request to the `develop` branch. Message me at pridon@primordialsoup.info if you have any ideas, questions or issues.
+
+## Features to be added
+
+- Load article markdown through ngrx effects and have loading state react to it.
+- Implement server side rendering with Angular Universal.
