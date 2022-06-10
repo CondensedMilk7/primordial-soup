@@ -23,6 +23,7 @@ The contact page submits form payload to [formspree](https://formspree.io/) whic
 - [Angular](https://angular.io/)
 - [NgRx](https://ngrx.io/)
 - [Angular Material](https://material.angular.io/)
+- [Angular Universal](https://angular.io/guide/universal)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Ngx Markdown](https://www.npmjs.com/package/ngx-markdown)
 
