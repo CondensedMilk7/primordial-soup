@@ -20,15 +20,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/primordial-soup",
+            "outputPath": "dist/primordial-soup/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/_redirects"],
             "styles": ["src/theme.scss", "src/styles.scss"],
-            "scripts": []
+            "scripts": ["node_modules/marked/marked.min.js"]
           },
           "configurations": {
             "production": {
@@ -93,6 +93,75 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "primordial-soup:build:production",
+            "firebaseProject": "primordial-soup-site",
+            "firebaseHostingSite": "primordial-soup-site"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/primordial-soup/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "primordial-soup:build:development",
+              "serverTarget": "primordial-soup:server:development"
+            },
+            "production": {
+              "browserTarget": "primordial-soup:build:production",
+              "serverTarget": "primordial-soup:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "primordial-soup:build:production",
+              "serverTarget": "primordial-soup:server:production"
+            },
+            "development": {
+              "browserTarget": "primordial-soup:build:development",
+              "serverTarget": "primordial-soup:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

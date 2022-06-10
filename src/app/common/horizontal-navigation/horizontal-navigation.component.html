@@ -1,0 +1,73 @@
+<div class="sticky top-0 z-10">
+  <div class="h-1 fixed w-screen">
+    <mat-progress-bar
+      color="primary"
+      mode="indeterminate"
+      *ngIf="articleLoading$ | async"
+    ></mat-progress-bar>
+  </div>
+  <div class="w-full flex py-2 px-3">
+    <!-- Browse Articles -->
+    <button
+      class="text-lg hidden lg:flex items-center ml-10 py-2 pr-4 pl-2 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-all text-can-50 bg-opacity-90 shadow-sm"
+      [ngClass]="{
+        'ml-0': (drawerOpened$ | async),
+        'ml-10': (drawerOpened$ | async) === false
+      }"
+      (click)="onToggleDrawer()"
+    >
+      <mat-icon *ngIf="(drawerOpened$ | async) === false"
+        >chevron_right</mat-icon
+      >
+      <mat-icon *ngIf="drawerOpened$ | async">chevron_left</mat-icon>
+      <span>Browse Articles</span>
+    </button>
+    <!-- Divider -->
+    <div
+      class="flex-grow text-center text-lg font-bold text-can-500 flex justify-center"
+    ></div>
+    <!-- Other nav actions -->
+    <div class="hidden lg:block">
+      <button
+        class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 bg-opacity-90 mr-10 shadow-sm"
+        routerLink="/about"
+        routerLinkActive="bg-can-800 text-soup-900"
+      >
+        About
+      </button>
+      <button
+        class="text-lg p-2 w-36 rounded-full bg-soup-600 hover:bg-can-800 hover:text-soup-900 transition-colors text-can-50 bg-opacity-90 mr-10 shadow-sm"
+        routerLink="/contact"
+        routerLinkActive="bg-can-800 text-soup-900"
+      >
+        Contact
+      </button>
+    </div>
+    <div class="flex justify-between lg:hidden w-24">
+      <button
+        mat-icon-button
+        matTooltip="Browse articles"
+        class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
+        (click)="onToggleDrawer()"
+      >
+        <mat-icon color="accent">plagiarism</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        matTooltip="Menu"
+        class="bg-soup-600 opacity-95 hover:bg-soup-200 transition-colors"
+      >
+        <mat-icon color="accent">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/about">
+          <mat-icon>question_mark</mat-icon><span>About</span>
+        </button>
+        <button mat-menu-item routerLink="/contact">
+          <mat-icon>mail</mat-icon><span>Contact</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</div>

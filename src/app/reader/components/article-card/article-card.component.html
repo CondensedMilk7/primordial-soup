@@ -1,0 +1,45 @@
+<div
+  class="flex flex-col flex-1 rounded-3xl max-w-[252px] overflow-hidden bg-can-500 mb-8 mx-4 cursor-pointer shadow-md hover:shadow-soup-200 transition-shadow"
+>
+  <!-- Thumbnail -->
+  <div class="h-[141px]">
+    <mat-progress-spinner
+      *ngIf="imageLoaded === false"
+      color="primary"
+      mode="indeterminate"
+      [diameter]="48"
+      class="m-auto my-10"
+    ></mat-progress-spinner>
+    <img class="w-full" [src]="article.thumbnail" (load)="imgLoaded()" />
+  </div>
+  <div class="p-4 text-sm">
+    <!-- Title -->
+    <p class="text-soup-900">
+      {{ article.title }}
+    </p>
+
+    <div class="flex justify-between mt-3">
+      <!-- Available content -->
+      <div class="flex items-center">
+        <mat-icon color="primary" class="mx-0.5" matTooltip="Article available"
+          >article</mat-icon
+        >
+        <a
+          *ngIf="article.videoUrl"
+          [href]="article.videoUrl"
+          target="_blank"
+          class="z-10 mx-0.5 flex items-center"
+        >
+          <mat-icon color="primary" matTooltip="Video available"
+            >video_library</mat-icon
+          >
+        </a>
+      </div>
+      <!-- Date -->
+      <div class="flex items-center">
+        <mat-icon color="primary" class="mr-1">date_range</mat-icon>
+        <span class="text-xs text-soup-900">{{ article.date | date }}</span>
+      </div>
+    </div>
+  </div>
+</div>

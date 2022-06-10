@@ -1,0 +1,14 @@
+<div
+  class="flex items-center bg-can-500 p-2 mx-4 rounded-xl transition-shadow"
+  [ngClass]="{ 'shadow-md shadow-soup-300': inputFocus }"
+>
+  <mat-icon color="primary">search</mat-icon>
+  <input
+    class="w-full bg-can-500 focus:border-none focus:outline-none"
+    type="text"
+    placeholder="Search..."
+    (focus)="inputFocus = true"
+    (focusout)="inputFocus = false"
+    [formControl]="searchControl"
+  />
+</div>

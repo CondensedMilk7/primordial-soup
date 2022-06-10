@@ -1,0 +1,85 @@
+<div
+  style="background-image: url('/assets/images/wallpaper-soup.jpg')"
+  class="bg-soup-600 -mt-16 z-0 top-0 left-0 w-full h-1/4 md:h-1/2 bg-cover lg:bg-center flex flex-col items-center justify-center text-center"
+>
+  <h1 class="text-4xl md:text-6xl text-can-50 font-bold">PRIMORDIAL SOUP</h1>
+</div>
+<main
+  class="bg-can-600 w-full flex flex-col items-center px-4 pb-8 sm:text-base text-sm"
+>
+  <div class="max-w-4xl">
+    <section
+      class="flex flex-col-reverse md:flex-row mt-8 md:mt-0 justify-between items-center"
+    >
+      <img
+        src="/assets/images/discobolus.png"
+        alt="discobolus statue"
+        class="w-72"
+      />
+      <div class="text-soup-900 text-justify max-w-lg">
+        <h2 class="text-3xl font-bold my-4 text-left">
+          Academic Inquiry Outside Academia
+        </h2>
+        <p class="mb-2">
+          We provide academic-level work while keeping it approachable for
+          almost anyone. Instead of having papers locked up in academic
+          establishments, reserved for selected individuals, we make them
+          publicly available. We want to create free space for thinkers outside
+          academia with free resources.
+        </p>
+      </div>
+    </section>
+    <section
+      class="flex flex-col-reverse md:flex-row-reverse mt-8 mb-4 md:mt-0 justify-between items-center"
+    >
+      <img
+        src="/assets/images/venus.png"
+        alt="venus statue"
+        class="w-72 rounded-full"
+      />
+      <div class="text-soup-900 text-justify max-w-lg">
+        <h2 class="text-3xl font-bold my-4 text-left">Otium Post Negotium</h2>
+        <p class="mb-2">
+          We believe that what makes the man is what he does at his idle time.
+          Thus, idleness - what the Romans called "otium" - is the source of all
+          intellectual inquiry. We aspire to cultivate the practice of
+          contemplative idleness with you. This is the endeavor that we want to
+          share. This is the journey we take together.
+        </p>
+      </div>
+    </section>
+    <section
+      class="flex flex-col-reverse md:flex-row mt-8 md:mt-0 justify-between items-center"
+    >
+      <img src="/assets/images/laocoon.png" alt="laocoon statue" class="w-60" />
+      <div class="text-soup-900 text-justify max-w-lg">
+        <h2 class="text-3xl font-bold my-4 text-left">Support Us</h2>
+        <p class="mb-2">
+          Our goal is to share our knowledge and intellectual achievements with
+          everyone for free. Our efforts take a fair amount of time and energy
+          but it is what we love doing. Nevertheless, if you want to show your
+          appreciation and support our cause, you are more than welcome! We
+          appreciate any help you can provide us.
+        </p>
+        <div class="text-left mt-4">
+          <p class="mb-2">
+            <img
+              src="/assets/icons/paypal.svg"
+              alt="paypal"
+              class="inline w-6 mr-2"
+            />
+            <strong>Paypal: </strong>
+            <a
+              [href]="donationLinks.paypal"
+              target="_blank"
+              class="underline text-lg"
+            >
+              {{ donationLinks.paypal.split("https://")[1] }}
+            </a>
+          </p>
+          <p>(more options will be added in time)</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

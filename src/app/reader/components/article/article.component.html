@@ -1,0 +1,58 @@
+<article class="py-8 px-4 flex flex-col items-center text-sm sm:text-base">
+  <div class="max-w-4xl">
+    <!-- Date & author-->
+    <div class="flex flex-col justify-center items-center text-center">
+      <div class="w-40">
+        <p class="font-bold">Date: {{ article.date | date: "dd/MM/yyyy" }}</p>
+        <div class="bg-soup-900 h-0.5 mt-2"></div>
+      </div>
+      <div class="mt-4">
+        <p><strong>Author(s): </strong>{{ article.author }}</p>
+      </div>
+    </div>
+    <!-- Article body -->
+    <section class="text-justify">
+      <markdown [src]="baseUrl + article.key + '/text.md'"></markdown>
+    </section>
+    <!-- References -->
+    <section class="mt-8 break-all sm:break-normal">
+      <h1 class="text-2xl font-bold text-center mb-8">References</h1>
+      <!-- APA reference -->
+      <ng-container *ngFor="let reference of article.references">
+        <p class="pl-8 -indent-8 w-full">
+          {{ reference }}
+        </p>
+        <div class="mb-6 flex items-center">
+          <!-- Libgen -->
+          <a
+            [href]="searchLink('libgen', reference)"
+            target="_blank"
+            class="text-soup-300 mr-2"
+          >
+            <img
+              src="/assets/icons/libgen.png"
+              alt="libgen"
+              class="inline w-8 rounded-full"
+            />
+            <span class="underline">[libgen]</span>
+          </a>
+          <!-- Sci-hub -->
+          <!-- Link is available if reference includes DOI -->
+          <a
+            *ngIf="reference.includes('doi.org')"
+            [href]="searchLink('sci-hub', reference)"
+            target="_blank"
+            class="text-soup-300 mr-2"
+          >
+            <img
+              src="/assets/icons/sci-hub.png"
+              alt="sci-hub"
+              class="inline w-8 rounded-full"
+            />
+            <span class="underline">[sci-hub]</span></a
+          >
+        </div>
+      </ng-container>
+    </section>
+  </div>
+</article>

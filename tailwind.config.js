@@ -1,3 +1,5 @@
+const tailwindColors = require("tailwindcss/colors");
+
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
@@ -19,6 +21,21 @@ module.exports = {
         A400: "#f800a5",
         A700: "#df0094",
       },
+      can: {
+        50: "#fdfcfd",
+        100: "#fbf7fa",
+        200: "#f9f1f7",
+        300: "#f6ebf4",
+        400: "#f4e7f1",
+        500: "#f2e3ef",
+        600: "#f0e0ed",
+        700: "#eedceb",
+        800: "#ecd8e8",
+        900: "#e8d0e4",
+      },
+      gray: tailwindColors.gray,
+      red: tailwindColors.red,
+      green: tailwindColors.green,
     },
   },
   plugins: [],
