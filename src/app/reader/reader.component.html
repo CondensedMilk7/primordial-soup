@@ -1,6 +1,8 @@
 <div class="min-h-screen">
   <ng-container *ngIf="currentArticle$ | async as article">
     <app-video [videoId]="article.videoId"></app-video>
-    <app-article [article]="article"></app-article>
+    <main>
+      <app-article [article]="article"></app-article>
+    </main>
   </ng-container>
 </div>

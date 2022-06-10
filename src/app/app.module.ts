@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +36,8 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
     PageNotFoundComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    TransferHttpCacheModule,
     BrowserAnimationsModule,
     HttpClientModule,
 
@@ -51,7 +53,9 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
     // Custom modules
     ReaderModule,
 
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {
+      initialNavigation: 'enabledBlocking',
+    }),
 
     // 3rd party modules
     MarkdownModule.forRoot(),
