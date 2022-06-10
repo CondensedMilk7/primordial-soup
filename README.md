@@ -40,4 +40,3 @@ Simply fork or clone this repository, create a branch following the standard [br
 ## Features to be added
 
 - Load article markdown through ngrx effects and have loading state react to it.
-- Implement server side rendering with Angular Universal.
