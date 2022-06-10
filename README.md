@@ -40,3 +40,4 @@ Simply fork or clone this repository, create a branch following the standard [br
 ## Features to be added
 
 - Load article markdown through ngrx effects and have loading state react to it.
+- Reset scroll position upon selecting a new article.
