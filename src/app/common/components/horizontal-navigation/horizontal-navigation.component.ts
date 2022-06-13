@@ -4,8 +4,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ReaderActions } from '../../reader/store/actions';
-import { ReaderSelectors } from '../../reader/store/selectors';
+import { ReaderActions } from '../../../reader/store/actions';
+import { ReaderSelectors } from '../../../reader/store/selectors';
 
 @Component({
   selector: 'app-horizontal-navigation',

@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './common/components/page-not-found/page-not-found.component';
 import { ReaderComponent } from './reader/reader.component';
 
 export const appRoutes: Route[] = [
