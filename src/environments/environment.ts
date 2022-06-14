@@ -1,13 +1,14 @@
 export const environment = {
   production: false,
+  projectName: 'Primordial Soup',
   snackBarDuration: 5000,
   github: {
     baseUrl:
-      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/',
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/dev/',
     articlesListUrl:
-      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/articles-list.json',
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/dev/articles-list.json',
     articleBaseUrl:
-      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/master/articles/',
+      'https://raw.githubusercontent.com/CondensedMilk7/primordial-soup-articles/dev/articles/',
   },
   contactUrl: 'https://formspree.io/f/xlezlgjw',
   libgenUrl: 'https://libgen.fun/search.php?req=',

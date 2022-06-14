@@ -18,7 +18,9 @@ export const getArticleDataSuccess = createAction(
     videoId: string;
     date: string;
     author: string;
+    description: string;
     references: string[];
+    image: string;
   }>()
 );
 

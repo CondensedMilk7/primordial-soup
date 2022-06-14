@@ -6,7 +6,10 @@ import {
 } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
-import { MediaWatcherService, MEDIA_QUERY } from 'src/app/common/media-watcher';
+import {
+  MediaWatcherService,
+  MEDIA_QUERY,
+} from 'src/app/common/services/media-watcher';
 import { ReaderActions } from '../store/actions';
 import { ReaderSelectors } from '../store/selectors';
 @UntilDestroy()

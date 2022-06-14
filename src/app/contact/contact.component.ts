@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
+import { MetaService } from '../common/services/meta/meta.service';
 import { ContactActions } from './store/actions';
 import { ContactSelectors } from './store/selectors';
 
@@ -21,7 +22,7 @@ export class ContactComponent implements OnInit {
     message: new FormControl('', Validators.required),
   });
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private metaService: MetaService) {}
 
   ngOnInit(): void {
     // Reset form only if it has been submitted successfully
@@ -30,6 +31,12 @@ export class ContactComponent implements OnInit {
         this.contactForm.reset();
       }
     });
+
+    this.metaService.updateMetaTags(
+      'Contact Us',
+      'https://i.imgur.com/N9o6LfX.jpg',
+      'Fill out the contact form'
+    );
   }
 
   onSubmit() {

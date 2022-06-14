@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MediaWatcherService, MEDIA_QUERY } from './common/media-watcher';
+import {
+  MediaWatcherService,
+  MEDIA_QUERY,
+} from './common/services/media-watcher';
 import { ReaderSelectors } from './reader/store/selectors';
 
 @UntilDestroy()
