@@ -1,16 +1,10 @@
 import { ArticleListItem } from '../models/article-list.model';
+import { SelectedArticle } from '../models/selected-article.model';
 
 export interface ReaderState {
   articlesList: ArticleListItem[];
   filteredList: ArticleListItem[] | null;
-  selectedArticle: {
-    title: string;
-    key: string;
-    videoId: string;
-    date: string;
-    author: string;
-    references: string[];
-  };
+  selectedArticle: SelectedArticle;
   error: string | null;
   loadingList: boolean;
   loadingArticle: boolean;

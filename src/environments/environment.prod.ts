@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  projectName: 'Primordial Soup',
   snackBarDuration: 5000,
   github: {
     baseUrl:
