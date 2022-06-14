@@ -44,3 +44,4 @@ Simply fork or clone this repository, create a branch following the standard [br
 - ~~Add dynamic meta tags (OG tags, such as og:title, og:image, etc.).~~
 - Load article markdown through ngrx effects and have loading state react to it.
 - Reset scroll position upon selecting a new article.
+- Implement tests.
