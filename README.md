@@ -4,6 +4,10 @@ This is an open-source frontend app built for [primordialsoup.info](https://prim
 
 ![Screenshot_2022-03-16_21-09-06](https://user-images.githubusercontent.com/82287873/158648656-5b7cad05-4d52-4205-9bea-e89bc399264a.png)
 
+# Auhtor's Note
+
+I'm considering rebuilding this website with a 11ty (static site generator), to keep it lightweight and simple initially. I will continue the development of this (angular) app once the platform grows, both in terms of accumulated resources and community. This is when an app becomes necessary -- for personalized reading list, comments, academic resource manager etc.
+
 ## Features
 
 The app features a reader, where you can select articles/videos to view. Both video and text is provided in academic format (following APA style), with references included at the bottom. The references also generate search links on sites such es libgen and sci-hub, which provide free access to a vast variety of literature.
