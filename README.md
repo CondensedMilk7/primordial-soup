@@ -4,9 +4,9 @@ This is an open-source frontend app built for [primordialsoup.info](https://prim
 
 ![Screenshot_2022-03-16_21-09-06](https://user-images.githubusercontent.com/82287873/158648656-5b7cad05-4d52-4205-9bea-e89bc399264a.png)
 
-# Auhtor's Note
+# Important Note:
 
-I'm considering rebuilding this website with a 11ty (static site generator), to keep it lightweight and simple initially. I will continue the development of this (angular) app once the platform grows, both in terms of accumulated resources and community. This is when an app becomes necessary -- for personalized reading list, comments, academic resource manager etc.
+This app is no longer in use at primordialsoup.info in favor for a [static site](https://github.com/CondensedMilk7/primordial-soup-static). If the community grows significantly enough that dynamic features become necessary, the development of this app will resume. For now, I have settled for a simpler solution.
 
 ## Features
 
